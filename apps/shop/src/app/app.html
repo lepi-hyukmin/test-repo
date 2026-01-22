@@ -2,18 +2,69 @@
   <div class="container">
     <h1>{{ title }}</h1>
     <nav>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        >Home</a
+      >
       <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a href="#" class="btn-login">Sign In</a>
     </nav>
   </div>
 </header>
 
 <main class="app-main">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Discover Premium Quality</h2>
+        <p>
+          Elevate your lifestyle with our curated collection of exclusive
+          products. Experience the difference today.
+        </p>
+        <a routerLink="/products" class="btn-primary">Start Shopping</a>
+      </div>
+      <div class="hero-visual">
+        <div class="abstract-shape"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features container">
+    <div class="feature-card">
+      <div class="icon">🚀</div>
+      <h3>Fast Delivery</h3>
+      <p>
+        Get your products delivered to your doorstep in record time with our
+        express logistics.
+      </p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💎</div>
+      <h3>Premium Quality</h3>
+      <p>
+        We source only the finest materials to ensure excellence in every single
+        product.
+      </p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h3>24/7 Support</h3>
+      <p>
+        Our dedicated support team is available around the clock to assist you.
+      </p>
+    </div>
+  </section>
+
   <router-outlet></router-outlet>
 </main>
 
 <footer class="app-footer">
   <div class="container">
-    <p>© 2025 Nx Shop Demo - Showcasing Nx Monorepo Features</p>
-    <p>Frontend (Angular) + Backend (Express) + Shared Libraries</p>
+    <p>© 2025 Nx Shop Demo. All rights reserved.</p>
+    <p style="opacity: 0.6; font-size: 0.8rem">Powered by Angular & Nx</p>
   </div>
 </footer>
