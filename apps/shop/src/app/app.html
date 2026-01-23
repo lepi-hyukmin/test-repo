@@ -1,19 +1,235 @@
-<header class="app-header">
+<!-- 프로모션 배너 -->
+<div class="promo-banner">
   <div class="container">
-    <h1>{{ title }}</h1>
-    <nav>
-      <a routerLink="/products" routerLinkActive="active">Products</a>
-    </nav>
+    <span class="promo-icon">🎉</span>
+    <span class="promo-text">신규 가입 시 20% 할인! 48시간 특가 진행중</span>
+    <button class="promo-close" aria-label="Close">×</button>
+  </div>
+</div>
+
+<header class="app-header">
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="contact-info">
+          <span>📞 1588-1234</span>
+          <span>|</span>
+          <span>⏰ 평일 09:00 - 18:00</span>
+        </div>
+        <div class="quick-links">
+          <a href="#notice">공지사항</a>
+          <a href="#faq">FAQ</a>
+          <a href="#support">고객센터</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <h1 class="logo">
+            <span class="logo-icon">🛍️</span>
+            {{ title }}
+          </h1>
+        </div>
+
+        <!-- 검색바 -->
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="🔍 상품을 검색해보세요..."
+            class="search-input"
+            aria-label="Search products"
+          />
+          <button class="search-btn">검색</button>
+        </div>
+
+        <!-- 사용자 액션 -->
+        <div class="user-actions">
+          <button class="icon-btn" aria-label="Wishlist">
+            <span class="icon">❤️</span>
+            <span class="badge">3</span>
+          </button>
+          <button class="icon-btn" aria-label="Cart">
+            <span class="icon">🛒</span>
+            <span class="badge">5</span>
+          </button>
+          <button class="icon-btn" aria-label="Notifications">
+            <span class="icon">🔔</span>
+            <span class="badge pulse">2</span>
+          </button>
+          <button class="user-profile">
+            <span class="avatar">👤</span>
+            <span class="username">Guest</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 메인 네비게이션 -->
+      <nav class="main-nav">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+        >
+          <span class="nav-icon">🏠</span>
+          홈
+        </a>
+        <a routerLink="/products" routerLinkActive="active">
+          <span class="nav-icon">📦</span>
+          전체상품
+        </a>
+        <a routerLink="/new" routerLinkActive="active">
+          <span class="nav-icon">🆕</span>
+          신상품
+        </a>
+        <a routerLink="/bestsellers" routerLinkActive="active">
+          <span class="nav-icon">⭐</span>
+          베스트
+        </a>
+        <a routerLink="/deals" routerLinkActive="active">
+          <span class="nav-icon">🔥</span>
+          특가
+        </a>
+        <a routerLink="/events" routerLinkActive="active">
+          <span class="nav-icon">🎁</span>
+          이벤트
+        </a>
+      </nav>
+    </div>
   </div>
 </header>
 
+<!-- 브레드크럼 -->
+<div class="breadcrumb">
+  <div class="container">
+    <span>홈</span>
+    <span class="separator">›</span>
+    <span class="current">현재 페이지</span>
+  </div>
+</div>
+
 <main class="app-main">
+  <!-- 사이드 퀵메뉴 -->
+  <div class="quick-menu">
+    <button class="quick-menu-item" title="맨 위로">
+      <span>⬆️</span>
+    </button>
+    <button class="quick-menu-item" title="최근 본 상품">
+      <span>👁️</span>
+      <span class="count">7</span>
+    </button>
+    <button class="quick-menu-item" title="1:1 문의">
+      <span>💬</span>
+    </button>
+  </div>
+
   <router-outlet></router-outlet>
 </main>
 
-<footer class="app-footer">
+<!-- 뉴스레터 구독 섹션 -->
+<section class="newsletter-section">
   <div class="container">
-    <p>© 2025 Nx Shop Demo - Showcasing Nx Monorepo Features</p>
-    <p>Frontend (Angular) + Backend (Express) + Shared Libraries</p>
+    <div class="newsletter-content">
+      <div class="newsletter-info">
+        <h3>📬 뉴스레터 구독</h3>
+        <p>최신 상품 소식과 특별 할인 정보를 받아보세요!</p>
+      </div>
+      <div class="newsletter-form">
+        <input
+          type="email"
+          placeholder="이메일 주소를 입력하세요"
+          class="newsletter-input"
+          aria-label="Email for newsletter"
+        />
+        <button class="newsletter-btn">구독하기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="app-footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 회사 정보 -->
+        <div class="footer-col">
+          <h4>🏢 회사 정보</h4>
+          <ul>
+            <li><a href="#about">회사 소개</a></li>
+            <li><a href="#careers">채용 정보</a></li>
+            <li><a href="#partners">파트너십</a></li>
+            <li><a href="#press">보도자료</a></li>
+          </ul>
+        </div>
+
+        <!-- 고객 서비스 -->
+        <div class="footer-col">
+          <h4>🎧 고객 서비스</h4>
+          <ul>
+            <li><a href="#help">도움말</a></li>
+            <li><a href="#shipping">배송 정보</a></li>
+            <li><a href="#returns">반품/교환</a></li>
+            <li><a href="#track">주문 조회</a></li>
+          </ul>
+        </div>
+
+        <!-- 정책 -->
+        <div class="footer-col">
+          <h4>📋 정책</h4>
+          <ul>
+            <li><a href="#privacy">개인정보처리방침</a></li>
+            <li><a href="#terms">이용약관</a></li>
+            <li><a href="#payment">결제 정책</a></li>
+            <li><a href="#security">보안 정책</a></li>
+          </ul>
+        </div>
+
+        <!-- 소셜 미디어 -->
+        <div class="footer-col">
+          <h4>🌐 소셜 미디어</h4>
+          <div class="social-links">
+            <a href="#facebook" class="social-btn" aria-label="Facebook">📘</a>
+            <a href="#instagram" class="social-btn" aria-label="Instagram"
+              >📷</a
+            >
+            <a href="#twitter" class="social-btn" aria-label="Twitter">🐦</a>
+            <a href="#youtube" class="social-btn" aria-label="YouTube">📺</a>
+          </div>
+          <div class="app-download">
+            <h5>📱 앱 다운로드</h5>
+            <button class="download-btn">App Store</button>
+            <button class="download-btn">Play Store</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="tech-stack">
+          <span class="tech-label">Powered by:</span>
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">Nx</span>
+          <span class="tech-badge">Express</span>
+          <span class="tech-badge">TypeScript</span>
+        </div>
+        <div class="copyright">
+          <p>© 2025 Nx Shop Demo - Showcasing Nx Monorepo Features</p>
+          <p class="tagline">
+            🚀 Frontend (Angular) + Backend (Express) + Shared Libraries
+          </p>
+        </div>
+        <div class="payment-methods">
+          <span>💳</span>
+          <span>🏦</span>
+          <span>📱</span>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
